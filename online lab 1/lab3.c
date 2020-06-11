@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-
+    //Limit loop and sum
     int num1, num2, sum = 0, i;
 
     printf("Enter first integer: ");
