@@ -18,5 +18,5 @@ int main()
 
         i++;
     }
-    printf("\nThe sum is: %d", sum);
+    printf("\nThe sum is: %d ", sum);
 }
