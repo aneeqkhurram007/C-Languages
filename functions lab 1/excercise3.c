@@ -12,10 +12,11 @@ float charge(float hours)
 
         charge = 0.5 * hours + 0.5;
     }
-    if (hours >= 19)
+    if (hours >= 19 &&)
     {
         charge = 10;
     }
+
     return charge;
 }
 
