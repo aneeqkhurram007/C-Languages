@@ -12,15 +12,15 @@ int main()
         if (n % i == 0)
         {
             flag = 1;
-                }
-        else
+        }
+        /*  else
         {
             while (i > 2)
             {
                 printf("Enter a number : ");
                 scanf("%d", &n);
             }
-        }
+        }*/
     }
 
     if (n == 1)
