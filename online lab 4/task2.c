@@ -2,7 +2,7 @@
 int main()
 {
 
-    int n1 = 1, n2 = 1, n3, i;
+    int n1 = 1, n2 = 1, n3;
     printf("%d  %d  ", n1, n2);
     do
     {
