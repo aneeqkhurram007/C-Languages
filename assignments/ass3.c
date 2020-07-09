@@ -52,5 +52,5 @@ int main()
 
         } while (name != ' ');
 
-        } while (inputStatus != EOF);
+    } while (inputStatus != EOF);
 }
