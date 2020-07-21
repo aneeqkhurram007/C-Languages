@@ -6,7 +6,7 @@ int main()
     printf("\n\t  6  |  7  |  8  ");
 
     char player1 = 'O', player2 = 'X', array[9] = {0};
-    int position, count1 = 0, count2 = 0, flag = 0;
+    int position, count1 = 0, count2 = 0, flag1 = 0, flag2 = 0;
     int check[3][3] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
     printf("\n'O' marks for player 1: ");
     printf("\n'X' marks for player 2: ");
@@ -23,49 +23,92 @@ int main()
 
                 array[position] = 'O';
                 count1++;
-                if (count1 >= 3)
+                // if (count1 >= 3)
+                //{
+                // if ((array[0] != 0 && array[1] != 0 && array[2] != 0 && array[3] != 0 && array[5] != 0 && array[5] != 0 && array[7] != 0 && array[7] != 0 && array[8] != 0) || count1 >= 4)
+                //{
+                if (array[0] == array[1] && array[1] == array[2])
                 {
-                    if (array[0] == array[1] && array[1] == array[2])
+                    if (array[0] != 0 && array[1] != 0 && array[2] != 0)
                     {
-                        printf("\nPlayer O Wins");
-                        break;
-                    }
-                    else if (array[3] == array[4] && array[4] == array[5])
-                    {
-                        printf("\nPlayer O Wins");
-                        break;
-                    }
-                    else if (array[6] == array[7] && array[7] == array[8])
-                    {
-                        printf("\nPlayer O Wins");
-                        break;
-                    }
-                    else if (array[0] == array[3] && array[3] == array[6])
-                    {
-                        printf("\nPlayer O Wins");
-                        break;
-                    }
-                    else if (array[1] == array[4] && array[4] == array[7])
-                    {
-                        printf("\nPlayer O Wins");
-                        break;
-                    }
-                    else if (array[2] == array[5] && array[5] == array[8])
-                    {
-                        printf("\nPlayer O Wins");
-                        break;
-                    }
-                    else if (array[0] == array[4] && array[4] == array[8])
-                    {
-                        printf("\nPlayer O Wins");
-                        break;
-                    }
-                    else if (array[2] == array[4] && array[4] == array[6])
-                    {
-                        printf("\nPlayer O Wins");
+                        /* code */
+
+                        flag1 = 1;
                         break;
                     }
                 }
+                else if (array[3] == array[4] && array[4] == array[5])
+                {
+                    if (array[3] != 0 && array[4] != 0 && array[5] != 0)
+                    {
+                        /* code */
+
+                        flag1 = 1;
+                        break;
+                    }
+                }
+                else if (array[6] == array[7] && array[7] == array[8])
+                {
+                    if (array[6] != 0 && array[7] != 0 && array[8] != 0)
+                    {
+                        /* code */
+
+                        flag1 = 1;
+                        break;
+                    }
+                }
+                else if (array[0] == array[3] && array[3] == array[6])
+                {
+                    if (array[0] != 0 && array[3] != 0 && array[6] != 0)
+                    {
+                        /* code */
+
+                        flag1 = 1;
+                        break;
+                    }
+                }
+                else if (array[1] == array[4] && array[4] == array[7])
+                {
+                    if (array[1] != 0 && array[4] != 0 && array[7] != 0)
+                    {
+                        /* code */
+
+                        flag1 = 1;
+                        break;
+                    }
+                }
+                else if (array[2] == array[5] && array[5] == array[8])
+                {
+                    if (array[2] != 0 && array[5] != 0 && array[8] != 0)
+                    {
+                        /* code */
+
+                        flag1 = 1;
+                        break;
+                    }
+                }
+                else if (array[0] == array[4] && array[4] == array[8])
+                {
+                    if (array[0] != 0 && array[4] != 0 && array[8] != 0)
+                    {
+                        /* code */
+
+                        flag1 = 1;
+                        break;
+                    }
+                }
+                else if (array[2] == array[4] && array[4] == array[6])
+                {
+                    if (array[2] != 0 && array[4] != 0 && array[6] != 0)
+                    {
+                        /* code */
+
+                        flag1 = 1;
+                        break;
+                    }
+                }
+                //}
+                // }
             }
             else
             {
@@ -84,49 +127,93 @@ int main()
 
                 array[position] = 'X';
                 count2++;
-                if (count2 >= 3)
+                //if (count2 >= 3)
+                //{
+                //if ((array[0] != 0 && array[1] != 0 && array[2] != 0 && array[3] != 0 && array[5] != 0 && array[5] != 0 && array[7] != 0 && array[7] != 0 && array[8] != 0) || count2 >= 4)
+                //{
+
+                if (array[0] == array[1] && array[1] == array[2])
                 {
-                    if (array[0] == array[1] && array[1] == array[2])
+                    if (array[0] != 0 && array[1] != 0 && array[2] != 0)
                     {
-                        printf("\nPlayer X Wins");
-                        break;
-                    }
-                    else if (array[3] == array[4] && array[4] == array[5])
-                    {
-                        printf("\nPlayer X Wins");
-                        break;
-                    }
-                    else if (array[6] == array[7] && array[7] == array[8])
-                    {
-                        printf("\nPlayer X Wins");
-                        break;
-                    }
-                    else if (array[0] == array[3] && array[3] == array[6])
-                    {
-                        printf("\nPlayer X Wins");
-                        break;
-                    }
-                    else if (array[1] == array[4] && array[4] == array[7])
-                    {
-                        printf("\nPlayer X Wins");
-                        break;
-                    }
-                    else if (array[2] == array[5] && array[5] == array[8])
-                    {
-                        printf("\nPlayer X Wins");
-                        break;
-                    }
-                    else if (array[0] == array[4] && array[4] == array[8])
-                    {
-                        printf("\nPlayer X Wins");
-                        break;
-                    }
-                    else if (array[2] == array[4] && array[4] == array[6])
-                    {
-                        printf("\nPlayer X Wins");
+                        /* code */
+
+                        flag2 = 1;
                         break;
                     }
                 }
+                else if (array[3] == array[4] && array[4] == array[5])
+                {
+                    if (array[3] != 0 && array[4] != 0 && array[5] != 0)
+                    {
+                        /* code */
+
+                        flag2 = 1;
+                        break;
+                    }
+                }
+                else if (array[6] == array[7] && array[7] == array[8])
+                {
+                    if (array[6] != 0 && array[7] != 0 && array[8] != 0)
+                    {
+                        /* code */
+
+                        flag2 = 1;
+                        break;
+                    }
+                }
+                else if (array[0] == array[3] && array[3] == array[6])
+                {
+                    if (array[0] != 0 && array[3] != 0 && array[6] != 0)
+                    {
+                        /* code */
+
+                        flag2 = 1;
+                        break;
+                    }
+                }
+                else if (array[1] == array[4] && array[4] == array[7])
+                {
+                    if (array[1] != 0 && array[4] != 0 && array[7] != 0)
+                    {
+                        /* code */
+
+                        flag2 = 1;
+                        break;
+                    }
+                }
+                else if (array[2] == array[5] && array[5] == array[8])
+                {
+                    if (array[2] != 0 && array[5] != 0 && array[8] != 0)
+                    {
+                        /* code */
+
+                        flag2 = 1;
+                        break;
+                    }
+                }
+                else if (array[0] == array[4] && array[4] == array[8])
+                {
+                    if (array[0] != 0 && array[4] != 0 && array[8] != 0)
+                    {
+                        /* code */
+
+                        flag2 = 1;
+                        break;
+                    }
+                }
+                else if (array[2] == array[4] && array[4] == array[6])
+                {
+                    if (array[2] != 0 && array[4] != 0 && array[6] != 0)
+                    {
+                        /* code */
+
+                        flag2 = 1;
+                        break;
+                    }
+                }
+                //}
+                //}
             }
             else
             {
@@ -135,6 +222,19 @@ int main()
             }
         }
     }
+    if (flag1 == flag2)
+    {
+        printf("\nMatch Draw");
+    }
+    else if (flag2 == 0 && flag1 == 1)
+    {
+        printf("\nPlayer O wins");
+    }
+    else if (flag1 == 0 && flag2 == 1)
+    {
+        printf("\nPlayer X wins");
+    }
+
     for (int i = 0; i < 9; i++)
     {
         if (array[i] == 0)
