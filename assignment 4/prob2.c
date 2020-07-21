@@ -23,15 +23,11 @@ int main()
 
                 array[position] = 'O';
                 count1++;
-                // if (count1 >= 3)
-                //{
-                // if ((array[0] != 0 && array[1] != 0 && array[2] != 0 && array[3] != 0 && array[5] != 0 && array[5] != 0 && array[7] != 0 && array[7] != 0 && array[8] != 0) || count1 >= 4)
-                //{
+
                 if (array[0] == array[1] && array[1] == array[2])
                 {
                     if (array[0] != 0 && array[1] != 0 && array[2] != 0)
                     {
-                        /* code */
 
                         flag1 = 1;
                         break;
@@ -41,7 +37,6 @@ int main()
                 {
                     if (array[3] != 0 && array[4] != 0 && array[5] != 0)
                     {
-                        /* code */
 
                         flag1 = 1;
                         break;
@@ -51,7 +46,6 @@ int main()
                 {
                     if (array[6] != 0 && array[7] != 0 && array[8] != 0)
                     {
-                        /* code */
 
                         flag1 = 1;
                         break;
@@ -61,7 +55,6 @@ int main()
                 {
                     if (array[0] != 0 && array[3] != 0 && array[6] != 0)
                     {
-                        /* code */
 
                         flag1 = 1;
                         break;
@@ -71,7 +64,6 @@ int main()
                 {
                     if (array[1] != 0 && array[4] != 0 && array[7] != 0)
                     {
-                        /* code */
 
                         flag1 = 1;
                         break;
@@ -81,7 +73,6 @@ int main()
                 {
                     if (array[2] != 0 && array[5] != 0 && array[8] != 0)
                     {
-                        /* code */
 
                         flag1 = 1;
                         break;
@@ -91,7 +82,6 @@ int main()
                 {
                     if (array[0] != 0 && array[4] != 0 && array[8] != 0)
                     {
-                        /* code */
 
                         flag1 = 1;
                         break;
@@ -101,14 +91,11 @@ int main()
                 {
                     if (array[2] != 0 && array[4] != 0 && array[6] != 0)
                     {
-                        /* code */
 
                         flag1 = 1;
                         break;
                     }
                 }
-                //}
-                // }
             }
             else
             {
@@ -127,16 +114,11 @@ int main()
 
                 array[position] = 'X';
                 count2++;
-                //if (count2 >= 3)
-                //{
-                //if ((array[0] != 0 && array[1] != 0 && array[2] != 0 && array[3] != 0 && array[5] != 0 && array[5] != 0 && array[7] != 0 && array[7] != 0 && array[8] != 0) || count2 >= 4)
-                //{
 
                 if (array[0] == array[1] && array[1] == array[2])
                 {
                     if (array[0] != 0 && array[1] != 0 && array[2] != 0)
                     {
-                        /* code */
 
                         flag2 = 1;
                         break;
@@ -146,7 +128,6 @@ int main()
                 {
                     if (array[3] != 0 && array[4] != 0 && array[5] != 0)
                     {
-                        /* code */
 
                         flag2 = 1;
                         break;
@@ -156,7 +137,6 @@ int main()
                 {
                     if (array[6] != 0 && array[7] != 0 && array[8] != 0)
                     {
-                        /* code */
 
                         flag2 = 1;
                         break;
@@ -166,7 +146,6 @@ int main()
                 {
                     if (array[0] != 0 && array[3] != 0 && array[6] != 0)
                     {
-                        /* code */
 
                         flag2 = 1;
                         break;
@@ -176,7 +155,6 @@ int main()
                 {
                     if (array[1] != 0 && array[4] != 0 && array[7] != 0)
                     {
-                        /* code */
 
                         flag2 = 1;
                         break;
@@ -186,7 +164,6 @@ int main()
                 {
                     if (array[2] != 0 && array[5] != 0 && array[8] != 0)
                     {
-                        /* code */
 
                         flag2 = 1;
                         break;
@@ -196,7 +173,6 @@ int main()
                 {
                     if (array[0] != 0 && array[4] != 0 && array[8] != 0)
                     {
-                        /* code */
 
                         flag2 = 1;
                         break;
@@ -206,14 +182,11 @@ int main()
                 {
                     if (array[2] != 0 && array[4] != 0 && array[6] != 0)
                     {
-                        /* code */
 
                         flag2 = 1;
                         break;
                     }
                 }
-                //}
-                //}
             }
             else
             {
