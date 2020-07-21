@@ -50,6 +50,7 @@ int checkWin()
             return 1;
         }
     }
+
     else if (array[0] == array[4] && array[4] == array[8])
     {
         if (array[0] != 0 && array[4] != 0 && array[8] != 0)
@@ -66,6 +67,10 @@ int checkWin()
             return 1;
         }
     }
+    else
+    {
+        return 0;
+    }
 }
 int main()
 {
@@ -75,7 +80,7 @@ int main()
 
     char player1 = 'O', player2 = 'X';
     int position, flag1 = 0, flag2 = 0;
-    int check[3][3] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};
+
     printf("\n'O' marks for player 1: ");
     printf("\n'X' marks for player 2: ");
 
@@ -91,6 +96,10 @@ int main()
 
                 array[position] = 'O';
                 flag1 = checkWin();
+                if (flag1 == 1)
+                {
+                    break;
+                }
             }
             else
             {
@@ -109,6 +118,10 @@ int main()
 
                 array[position] = 'X';
                 flag2 = checkWin();
+                if (flag2 == 1)
+                {
+                    break;
+                }
             }
             else
             {

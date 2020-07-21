@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 
 char square[10] = {'o', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
@@ -67,18 +66,8 @@ int main()
     else
         printf("==>\aGame draw");
 
-    getch();
-
     return 0;
 }
-
-/*********************************************
-
-FUNCTION TO RETURN GAME STATUS
-1 FOR GAME IS OVER WITH RESULT
--1 FOR GAME IS IN PROGRESS
-O GAME IS OVER AND NO RESULT
- **********************************************/
 
 int checkwin()
 {
@@ -114,13 +103,9 @@ int checkwin()
         return -1;
 }
 
-/*******************************************************************
-FUNCTION TO DRAW BOARD OF TIC TAC TOE WITH PLAYERS MARK
- ********************************************************************/
-
 void board()
 {
-    system("cls");
+
     printf("\n\n\tTic Tac Toe\n\n");
 
     printf("Player 1 (X)  -  Player 2 (O)\n\n\n");
@@ -140,7 +125,3 @@ void board()
 
     printf("     |     |     \n\n");
 }
-
-/*******************************************************************
-END OF PROJECT
- ********************************************************************/
