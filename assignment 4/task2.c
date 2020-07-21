@@ -59,6 +59,27 @@ void merge(int array1[], int array2[], int *size1, int *size2)
     }
 }
 
+/*void bubble(int array3[], int totSiz)
+{
+    int temp, i, j;
+
+    for (i = 0; i < totSiz; i++)
+    {
+        for (j = 0; j < totSiz; j++)
+        {
+            if (array3[j] > array3[j + 1])
+            {
+                temp = array3[j];
+                array3[j] = array3[j + 1];
+                array3[j + 1] = temp;
+            }
+        }
+    }
+    /* for (i = 0; i < totSiz; i++)
+    {
+        printf("%d ", array3[i]);
+    }
+}*/
 int main()
 {
     int size1, size2;
