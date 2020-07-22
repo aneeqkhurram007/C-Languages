@@ -174,6 +174,7 @@ int main()
                 {
                     merge[k] = merge[k + 1];
                 }
+                arr1Size-- + arr2Size;
             }
             else
             {
