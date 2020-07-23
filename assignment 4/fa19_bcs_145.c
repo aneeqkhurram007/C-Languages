@@ -1,7 +1,7 @@
 //Task 1
-/* #include <stdio.h>
+#include <stdio.h>
 
-int checkWin(int array[])
+int checkWin(char array[])
 {
     if (array[0] == array[1] && array[1] == array[2])
     {
@@ -80,7 +80,7 @@ int main()
     printf("\n\t  6  |  7  |  8  ");
 
     char player1 = 'O', player2 = 'X';
-    int array[9] = {0};
+    char array[9] = {0};
     int position, flag1 = 0, flag2 = 0;
 
     printf("\n'O' marks for player 1: ");
@@ -164,9 +164,9 @@ int main()
             printf("\n\t__%c__|__%c__|__%c__", array[i], array[i + 1], array[i + 2]);
         }
     }
-}*/
+}
 //Task 2
-#include <stdio.h>
+/*#include <stdio.h>
 void merge(int array1[], int array2[], int *size1, int *size2)
 {
 
@@ -254,4 +254,4 @@ int main()
         printf("%d ", array2[i]);
     }
     merge(array1, array2, &size1, &size2);
-}
+}*/
