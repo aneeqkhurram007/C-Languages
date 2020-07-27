@@ -12,7 +12,8 @@ int main()
     printf("\nnew value of x= %d", x);
     printf("\nAdress of new x = %d", xpt);
     printf("\nAdress of xpt = %d", &xpt);*/
-    int a[5];
+    //Arrays with pointers/
+    /* int a[5];
     printf("\n Values of array a: ");
     for (int i = 0; i < 5; i++)
     {
@@ -48,7 +49,7 @@ int main()
     {
         printf("\nNew values for a[%d]=%d", i, a[i]);
     }
-
+*/
     //Static Values:
     /*
     int b = 10;
@@ -68,4 +69,27 @@ int main()
     printf("\nValue for pointer bpt= %d", bpt);
     printf("\nAddress of pointer bpt=%d", &bpt);
     printf("\nDerefernce value of pointer *bpt=%d", *bpt);
-*/}
+*/
+    int a[5] = {1, 2, 4, 5, 8};
+    for (int i = 0; i < 5; i++)
+    {
+        printf("\n a[%d]=%d", i, a[i]);
+    }
+    int *apt = a;
+    for (int i = 0; i < 5; i++)
+    {
+        printf("\n apt[%d]=%d", i, apt[i]);
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        printf("\nCurrent Address (a+%d)=%d", i, (a + i));
+        printf("\nSource Address a=%d", a);
+        printf("\nValue at current address *(a+%d)=%d", i, *(a + i));
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        printf("\n*apt = %d", *apt);
+        printf("\napt=%d", apt);
+        apt++;
+    }
+}
