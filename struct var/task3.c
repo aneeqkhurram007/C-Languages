@@ -8,7 +8,7 @@ int main()
         int minutes;
         int seconds;
         char period[2];
-    }TimeStruct;
+    };
     struct date
     {
         int day;
