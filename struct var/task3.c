@@ -1,8 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-void getData(struct date DATE[], int s) {
 
-}
 int main()
 {
     struct timeStruct
