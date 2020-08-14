@@ -33,16 +33,17 @@ void display(Products p[])
 }
 int main()
 {
-    int numOfProd, prodnum[5], quantity[5], temp[5];
 
     Products prod[5] = {{101, "Soap", 60.00, 10}, {102, "Liquid Hand Wash", 200.00, 20}, {103, "Liquid Dish Wash", 150.00, 30}, {104, "Table Cleaner", 350.00, 40}, {105, "Hand Sanitizer", 100.00, 50}};
 Restart:
 
     display(prod);
-    printf("\nEnter the number of products you want to purchase:");
-    printf("\nNOTE: You can only purchase at most 5 products: ");
+    int numOfProd, prodnum[5], quantity[5], temp[5];
     float totalBill = 0;
     int flag = 0;
+    printf("\nEnter the number of products you want to purchase:");
+    printf("\nNOTE: You can only purchase at most 5 products: ");
+
     do
     {
         fflush(stdin);
