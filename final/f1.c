@@ -38,7 +38,7 @@ int main()
 Restart:
 
     display(prod);
-    int numOfProd, prodnum[5], quantity[5], temp[5];
+    int numOfProd, prodnum[5] = {0}, quantity[5] = {0}, temp[5] = {0};
     float totalBill = 0;
     int flag = 0;
     printf("\nEnter the number of products you want to purchase:");
@@ -108,7 +108,11 @@ Restart:
             }
         }
     }
-    printf("\nProduct Number Product Name\tRetail Price in Rs.\tQuantity\tAmount");
+    if (totalBill != 0)
+    {
+        printf("\nProduct Number Product Name\tRetail Price in Rs.\tQuantity\tAmount");
+    }
+
     for (int i = 0; i < numOfProd; i++)
     {
         for (int j = 0; j < 5; j++)
@@ -132,8 +136,15 @@ Restart:
             }
         }
     }
+    if (totalBill != 0)
+    {
 
-    printf("\nTotal Bill = %.2f", totalBill);
+        printf("\nTotal Bill = %.2f", totalBill);
+    }
+    else
+    {
+        printf("\nNo items were purchased. The bill was zero.");
+    }
 
     char choice;
     printf("\nPress 'y' to continue shopping: ");
