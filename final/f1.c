@@ -34,7 +34,11 @@ void display(Products p[])
 int main()
 {
 
-    Products prod[5] = {{101, "Soap", 60.00, 10}, {102, "Liquid Hand Wash", 200.00, 20}, {103, "Liquid Dish Wash", 150.00, 30}, {104, "Table Cleaner", 350.00, 40}, {105, "Hand Sanitizer", 100.00, 50}};
+    Products prod[5] = {{101, "Soap", 60.00, 10},
+                        {102, "Liquid Hand Wash", 200.00, 20},
+                        {103, "Liquid Dish Wash", 150.00, 30},
+                        {104, "Table Cleaner", 350.00, 40},
+                        {105, "Hand Sanitizer", 100.00, 50}};
 Restart:
 
     display(prod);
