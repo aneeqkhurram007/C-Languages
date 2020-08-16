@@ -32,16 +32,16 @@ void display(Products p[])
     }
 }
 //Products Insertion
-int prodValid(int numOfProd)
+int prodValid(int *numOfProd)
 {
-    while (numOfProd > 5)
+    while (*numOfProd > 5)
     {
-        if (numOfProd > 5)
+        if (*numOfProd > 5)
         {
             printf("\nTry Again.");
             printf("\nNOTE: You can only purchase at most 5 products: ");
             fflush(stdin);
-            scanf("%d", &numOfProd);
+            scanf("%d", &*numOfProd);
         }
     }
 }
@@ -155,7 +155,7 @@ Restart:
     //Products Insertion
     fflush(stdin);
     scanf("%d", &numOfProd);
-    numOfProd = prodValid(numOfProd);
+    numOfProd = prodValid(&numOfProd);
 
     //Product Number Validation:
     prodNumValid(numOfProd, prodnum, quantity, prod);
