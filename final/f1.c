@@ -95,7 +95,7 @@ Restart:
             {
                 if (quantity[i] > prod[j].quant)
                 {
-                    printf("\nStock was isnufficient to complete order %d.", prodnum[i]);
+                    printf("\nStock was isnufficient to complete order %d.\n", prodnum[i]);
                     temp[j] = prod[j].quant;
                     quantity[i] = prod[j].quant;
                     prod[j].amount = quantity[i] * prod[j].retail;
