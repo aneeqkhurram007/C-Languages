@@ -1,11 +1,7 @@
-#include <iostream>
-#include <string>
-using namespace std;
-#include "books.h"
+#include "iostream"
+#include "account.h"
 int main()
 {
-
-	books book;
-	book.setId(100);
-	cout << book.getId() << endl;
+	account acc1 = account("Aneeq", 5000);
+	acc1.display();
 }
