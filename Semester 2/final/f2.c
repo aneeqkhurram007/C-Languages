@@ -51,7 +51,7 @@ void prodNumValid(int numOfProd, int *prodnum, int *quantity, Products *prod)
     int flag = 0;
     for (int i = 0; i < numOfProd; i++)
     {
-        printf("\nEnter product number : ", i + 1);
+        printf("\nEnter product number : ");
         fflush(stdin);
         scanf("%d", &prodnum[i]);
         for (int j = 0; j < 5; j++)
