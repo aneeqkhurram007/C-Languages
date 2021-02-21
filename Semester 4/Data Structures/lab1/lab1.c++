@@ -20,28 +20,6 @@ void display(int *option)
     cin >> *option;
 }
 
-int stringSize(char *arr)
-{
-    int i;
-    for (i = 0; arr[i] != '\0'; i++)
-    {
-    }
-    return i;
-}
-
-int stringSizeByValue(char *arr, char value)
-{
-    int count = 0;
-    for (int i = 0; arr[i] = '\0'; i++)
-    {
-        if (arr[i] != value)
-        {
-            count++;
-        }
-    }
-    return count;
-}
-
 void insert(char *array)
 {
     cout << "Enter any string: ";
@@ -54,15 +32,12 @@ char *delByIndex(char *array)
     int index;
     cout << "Enter index: ";
     cin >> index;
-    int oldSize = stringSize(array);
-    SIZE = oldSize - 1;
-    char *temp = new char[SIZE];
-    for (int i = 0, j = 0; i < oldSize; i++)
+    char *temp = new char[SIZE]{0};
+    for (int i = 0, j = 0; array[i] != '\0'; i++)
     {
         if (index != i)
         {
             temp[j] = array[i];
-            cout << temp[j];
             j++;
         }
     }
@@ -77,15 +52,12 @@ char *delByValue(char *array)
     char value;
     cout << "Enter Value: ";
     cin >> value;
-    int oldSize = stringSize(array);
-    SIZE = stringSizeByValue(array, value);
-    char *temp = new char[SIZE];
-    for (int i = 0, j = 0; i < oldSize; i++)
+    char *temp = new char[SIZE]{0};
+    for (int i = 0, j = 0; array[i] != '\0'; i++)
     {
         if (array[i] != value)
         {
             temp[j] = array[i];
-            cout << temp[j];
             j++;
         }
     }
@@ -145,7 +117,7 @@ int main()
 
     char choice;
     int option;
-    char *array = new char[SIZE];
+    char *array = new char[SIZE]{0};
     insert(array);
     do
     {
