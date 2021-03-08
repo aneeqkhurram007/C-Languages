@@ -18,74 +18,88 @@ int main()
 
     float result[SIZE] = {0};
 
-    cout << "\nNote: Must enclose your expression within brackets." << endl;
-
-    cout << "Enter an expression: ";
-    cin.getline(infix, SIZE);
-
-    for (int i = 0, p = 0; infix[i] != '\0'; i++)
+    char choice;
+    do
     {
-        if (infix[i] >= 40 && infix[i] <= 47)
+
+        cout << "\nNote: Must enclose your expression within brackets." << endl;
+
+        cout << "Enter an expression: ";
+        fflush(stdin);
+        cin.getline(infix, SIZE);
+
+        int tempSize = 0;
+        for (int i = 0; infix[i] != 0; i++)
         {
-            top++;
-            stack[top] = infix[i];
+            ++tempSize;
+        }
 
-            if (stack[top] == 41)
+        for (int i = 0, p = 0; infix[i] != '\0'; i++)
+        {
+            if (infix[i] >= 40 && infix[i] <= 47)
             {
+                top++;
+                stack[top] = infix[i];
 
-                RB++;
-                // switch (stack[top - 1])
-                // {
-                // case 42:
-                //     temp = postfix[p] * postfix[p - 1];
-                //     postfix[p - 1] = temp;
-                //     break;
-                // case 43:
-                //     temp = postfix[p] + postfix[p - 1];
-                //     postfix[p - 1] = temp;
+                if (stack[top] == 41)
+                {
 
-                //     break;
-                // case 45:
-                //     temp = postfix[p] - postfix[p - 1];
-                //     postfix[p - 1] = temp;
+                    RB++;
+                    // switch (stack[top - 1])
+                    // {
+                    // case 42:
+                    //     temp = postfix[p] * postfix[p - 1];
+                    //     postfix[p - 1] = temp;
+                    //     break;
+                    // case 43:
+                    //     temp = postfix[p] + postfix[p - 1];
+                    //     postfix[p - 1] = temp;
 
-                //     break;
-                // case 47:
-                //     temp = postfix[p] / postfix[p - 1];
-                //     postfix[p - 1] = temp;
+                    //     break;
+                    // case 45:
+                    //     temp = postfix[p] - postfix[p - 1];
+                    //     postfix[p - 1] = temp;
 
-                //     break;
+                    //     break;
+                    // case 47:
+                    //     temp = postfix[p] / postfix[p - 1];
+                    //     postfix[p - 1] = temp;
 
-                // default:
-                //     break;
-                // }
-                postfix[p] = stack[top - 1];
+                    //     break;
+
+                    // default:
+                    //     break;
+                    // }
+                    postfix[p] = stack[top - 1];
+                    p++;
+
+                    stack[top] = '\0';
+                    stack[top - 1] = '\0';
+                    stack[top - 2] = '\0';
+
+                    top -= 3;
+                }
+                else if (stack[top] == 40)
+                {
+                    LB++;
+                }
+            }
+            else
+            {
+                postfix[p] = infix[i];
                 p++;
-
-                stack[top] = '\0';
-                stack[top - 1] = '\0';
-                stack[top - 2] = '\0';
-
-                top -= 3;
             }
-            else if (stack[top] == 40)
-            {
-                LB++;
-            }
+        }
+        if (RB == LB && RB != 0 && LB != 0 && infix[tempSize - 1] == 41)
+        {
+            cout << "Stack: " << endl;
+            cout << "PostFix Expression: " << postfix << endl;
         }
         else
         {
-            postfix[p] = infix[i];
-            p++;
+            cout << "Invalid set of brackets." << endl;
         }
-    }
-    if (RB == LB)
-    {
-        cout << "Stack: " << stack << endl;
-        cout << "PostFix Expression: " << postfix << endl;
-    }
-    else
-    {
-        cout << "Invalid set of brackets." << endl;
-    }
+        cout << "Do you want to continue (y/n): ";
+        cin >> choice;
+    } while (choice == 'y' || choice == 'Y');
 }
