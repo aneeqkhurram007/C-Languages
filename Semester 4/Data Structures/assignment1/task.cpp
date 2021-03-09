@@ -65,7 +65,7 @@ int main()
                 p++;
             }
         }
-        if (RB == LB && RB != 0 && LB != 0 && infix[tempSize - 1] == 41 && infix[0] == 40)
+        if (RB == LB && infix[tempSize - 1] == 41 && infix[0] == 40)
         {
             cout << "Stack: " << endl;
             cout << "PostFix Expression: " << postfix << endl;
