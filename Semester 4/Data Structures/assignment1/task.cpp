@@ -22,7 +22,7 @@ int main()
     do
     {
 
-        cout << "\nNote: Must enclose your expression within brackets." << endl;
+        cout << "\nNote: Must enclose your expression within brackets (...expression)." << endl;
 
         cout << "Enter an expression: ";
         fflush(stdin);
@@ -45,31 +45,6 @@ int main()
                 {
 
                     RB++;
-                    // switch (stack[top - 1])
-                    // {
-                    // case 42:
-                    //     temp = postfix[p] * postfix[p - 1];
-                    //     postfix[p - 1] = temp;
-                    //     break;
-                    // case 43:
-                    //     temp = postfix[p] + postfix[p - 1];
-                    //     postfix[p - 1] = temp;
-
-                    //     break;
-                    // case 45:
-                    //     temp = postfix[p] - postfix[p - 1];
-                    //     postfix[p - 1] = temp;
-
-                    //     break;
-                    // case 47:
-                    //     temp = postfix[p] / postfix[p - 1];
-                    //     postfix[p - 1] = temp;
-
-                    //     break;
-
-                    // default:
-                    //     break;
-                    // }
                     postfix[p] = stack[top - 1];
                     p++;
 
@@ -90,7 +65,7 @@ int main()
                 p++;
             }
         }
-        if (RB == LB && RB != 0 && LB != 0 && infix[tempSize - 1] == 41)
+        if (RB == LB && RB != 0 && LB != 0 && infix[tempSize - 1] == 41 && infix[0] == 40)
         {
             cout << "Stack: " << endl;
             cout << "PostFix Expression: " << postfix << endl;
