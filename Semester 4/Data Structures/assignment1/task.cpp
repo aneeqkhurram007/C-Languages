@@ -8,11 +8,11 @@ int main()
     cout << "Prepared By: Aneeq Khurram\t RegId: FA19-BCS-145" << endl;
 
     int top = -1;
-    float temp = 0;
     int LB = 0; //Left Bracket;
     int RB = 0; //Right Bracket;
 
     char *infix = new char[SIZE]{0};
+    // char infix[] = "((2+3)*5)";
     char *postfix = new char[SIZE]{0};
     char *stack = new char[SIZE]{0};
 
@@ -69,6 +69,49 @@ int main()
         {
             cout << "Stack: " << endl;
             cout << "PostFix Expression: " << postfix << endl;
+            int *temp = new int[SIZE];
+            for (int i = 0, j = 0; postfix[i] != '\0'; i++)
+            {
+                if (postfix[i] == '+' || postfix[i] == '*' || postfix[i] == '-' || postfix[i] == '/')
+                {
+                    switch (postfix[i])
+                    {
+                    case 42:
+
+                        temp[j - 2] = temp[j - 2] * temp[j - 1];
+                        // cout << temp[j - 2] << "\n";
+                        j -= 1;
+
+                        break;
+                    case 43:
+                        temp[j - 2] = temp[j - 2] + temp[j - 1];
+                        // cout << temp[j - 2] << "\n";
+                        j -= 1;
+                        break;
+                    case 45:
+                        temp[j - 2] = temp[j - 2] - temp[j - 1];
+                        // cout << temp[j - 2] << "\n";
+                        j -= 1;
+                        break;
+                    case 47:
+                        temp[j - 2] = temp[j - 2] / temp[j - 1];
+                        // cout << temp[j - 2] << "\n";
+                        j -= 1;
+                        break;
+                        break;
+
+                    default:
+                        break;
+                    }
+                }
+                else
+                {
+                    temp[j] = postfix[i] - 48;
+                    // cout << temp[j] << j << "\n";
+                    j++;
+                }
+            }
+            cout << "Result: " << temp[0] << endl;
         }
         else
         {
