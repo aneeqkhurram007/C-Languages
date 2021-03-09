@@ -7,20 +7,19 @@ int main()
     cout << "\t\tInfix To PostFix" << endl;
     cout << "Prepared By: Aneeq Khurram\t RegId: FA19-BCS-145" << endl;
 
-    int top = -1;
-    int LB = 0; //Left Bracket;
-    int RB = 0; //Right Bracket;
-
-    char *infix = new char[SIZE]{0};
-    // char infix[] = "((2+3)*5)";
-    char *postfix = new char[SIZE]{0};
-    char *stack = new char[SIZE]{0};
-
-    float result[SIZE] = {0};
-
     char choice;
     do
     {
+
+        int top = -1;
+        int LB = 0;
+        int RB = 0;
+
+        char *infix = new char[SIZE]{0};
+        char *postfix = new char[SIZE]{0};
+        char *stack = new char[SIZE]{0};
+
+        float result[SIZE] = {0};
 
         cout << "\nNote: Must enclose your expression within brackets (...expression)." << endl;
 
@@ -70,48 +69,59 @@ int main()
             cout << "Stack: " << endl;
             cout << "PostFix Expression: " << postfix << endl;
             int *temp = new int[SIZE];
-            for (int i = 0, j = 0; postfix[i] != '\0'; i++)
+            int flag = 0;
+            for (int i = 0; postfix[i] != '\0'; i++)
             {
-                if (postfix[i] == '+' || postfix[i] == '*' || postfix[i] == '-' || postfix[i] == '/')
+                if (!(postfix[i] >= 48 && postfix[i] <= 57))
                 {
-                    switch (postfix[i])
-                    {
-                    case 42:
-
-                        temp[j - 2] = temp[j - 2] * temp[j - 1];
-                        // cout << temp[j - 2] << "\n";
-                        j -= 1;
-
-                        break;
-                    case 43:
-                        temp[j - 2] = temp[j - 2] + temp[j - 1];
-                        // cout << temp[j - 2] << "\n";
-                        j -= 1;
-                        break;
-                    case 45:
-                        temp[j - 2] = temp[j - 2] - temp[j - 1];
-                        // cout << temp[j - 2] << "\n";
-                        j -= 1;
-                        break;
-                    case 47:
-                        temp[j - 2] = temp[j - 2] / temp[j - 1];
-                        // cout << temp[j - 2] << "\n";
-                        j -= 1;
-                        break;
-                        break;
-
-                    default:
-                        break;
-                    }
-                }
-                else
-                {
-                    temp[j] = postfix[i] - 48;
-                    // cout << temp[j] << j << "\n";
-                    j++;
+                    flag = 1;
+                    break;
                 }
             }
-            cout << "Result: " << temp[0] << endl;
+            if (flag == 0)
+            {
+                for (int i = 0, j = 0; postfix[i] != '\0'; i++)
+                {
+                    if (postfix[i] == '+' || postfix[i] == '*' || postfix[i] == '-' || postfix[i] == '/')
+                    {
+                        switch (postfix[i])
+                        {
+                        case 42:
+
+                            temp[j - 2] = temp[j - 2] * temp[j - 1];
+                            j -= 1;
+
+                            break;
+                        case 43:
+                            temp[j - 2] = temp[j - 2] + temp[j - 1];
+                            j -= 1;
+                            break;
+                        case 45:
+                            temp[j - 2] = temp[j - 2] - temp[j - 1];
+                            j -= 1;
+                            break;
+                        case 47:
+                            temp[j - 2] = temp[j - 2] / temp[j - 1];
+                            j -= 1;
+                            break;
+                            break;
+
+                        default:
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        temp[j] = postfix[i] - 48;
+                        j++;
+                    }
+                }
+                cout << "Result: " << temp[0] << endl;
+            }
+            else
+            {
+                cout << "No Result for Undefined variables." << endl;
+            }
         }
         else
         {
