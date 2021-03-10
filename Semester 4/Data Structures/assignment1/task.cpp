@@ -98,7 +98,7 @@ void processing(char *infix, char *postfix, char *stack, int *LB, int *RB)
 }
 void resultsProcessing(char *postfix)
 {
-    int *temp = new int[SIZE];
+    float *temp = new float[SIZE];
     bool flag = false;
     for (int i = 0; postfix[i] != '\0'; i++)
     {
