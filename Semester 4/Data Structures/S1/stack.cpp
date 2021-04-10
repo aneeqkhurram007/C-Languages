@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 class stack
@@ -61,6 +62,7 @@ void traversal(stack *ptr)
 }
 int main()
 {
+    cout << "Prepared By: Aneeq Khurram \tRegId: FA19-BCS-145" << endl;
     char *s = new char(50);
     char choice;
     do
