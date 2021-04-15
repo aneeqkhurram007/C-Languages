@@ -90,7 +90,7 @@ int main()
     do
     {
         stack *top = NULL;
-        s = new char(50);
+        s = new char[50]{'\0'};
         int TOP = -1;
         cout << "\nPlease enter the input expression: ";
         fflush(stdin);
