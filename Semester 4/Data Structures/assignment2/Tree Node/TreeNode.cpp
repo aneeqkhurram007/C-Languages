@@ -1,25 +1,25 @@
 #include <iostream>
 using namespace std;
-class TreeNode
+class trees
 {
     int data;
-    TreeNode *left;
-    TreeNode *right;
+    trees *left;
+    trees *right;
 
 public:
-    TreeNode()
+    trees()
     {
         data = 0;
         left = NULL;
         right = NULL;
     }
-    TreeNode(int val)
+    trees(int val)
     {
         data = val;
         left = NULL;
         right = NULL;
     }
-    ~TreeNode()
+    ~trees()
     {
         if (left != NULL)
         {
@@ -36,11 +36,11 @@ public:
     {
         data = val;
     }
-    void setLeft(TreeNode *l)
+    void setLeft(trees *l)
     {
         left = l;
     }
-    void setRight(TreeNode *r)
+    void setRight(trees *r)
     {
         right = r;
     }
@@ -48,25 +48,25 @@ public:
     {
         return data;
     }
-    TreeNode *getLeft() const
+    trees *getLeft() const
     {
         return left;
     }
-    TreeNode *getRight() const
+    trees *getRight() const
     {
         return right;
     }
 };
 class BinarySearchTree
 {
-    TreeNode *root;
+    trees *root;
 
 public:
     BinarySearchTree()
     {
         root = NULL;
     }
-    BinarySearchTree(TreeNode *n)
+    BinarySearchTree(trees *n)
     {
         root = n;
     }
@@ -78,17 +78,17 @@ public:
             root = NULL;
         }
     }
-    void setRoot(TreeNode *n)
+    void setRoot(trees *n)
     {
         root = n;
     }
-    TreeNode *getRoot() const
+    trees *getRoot() const
     {
         return root;
     }
     void insertNode(int val)
     {
-        TreeNode *node = new TreeNode(val);
+        trees *node = new trees(val);
 
         if (root == NULL)
         {
@@ -96,8 +96,8 @@ public:
         }
         else
         {
-            TreeNode *temp = root;
-            TreeNode *store = NULL;
+            trees *temp = root;
+            trees *store = NULL;
             while (temp != NULL)
             {
                 store = temp;
@@ -127,7 +127,7 @@ public:
             }
         }
     }
-    void inOrder(TreeNode *obj)
+    void inOrder(trees *obj)
     {
         if (obj == NULL)
         {
@@ -140,7 +140,7 @@ public:
             inOrder(obj->getRight());
         }
     }
-    void preOrder(TreeNode *obj)
+    void preOrder(trees *obj)
     {
         if (obj == NULL)
         {
@@ -153,7 +153,7 @@ public:
             preOrder(obj->getRight());
         }
     }
-    void postOrder(TreeNode *obj)
+    void postOrder(trees *obj)
     {
         if (obj == NULL)
         {
@@ -166,7 +166,7 @@ public:
             cout << obj->getData() << " ";
         }
     }
-    int helperHeight(TreeNode *r)
+    int helperHeight(trees *r)
     {
         if (r == NULL)
         {
@@ -194,7 +194,7 @@ public:
             }
         }
     }
-    void helperLevelOrder(TreeNode *r, int levels)
+    void helperLevelOrder(trees *r, int levels)
     {
         if (r == NULL)
         {
@@ -219,7 +219,7 @@ public:
             helperLevelOrder(root, i);
         }
     }
-    int returnParent(int n, TreeNode *root)
+    int returnParent(int n, trees *root)
     {
         if (root == NULL)
         {
@@ -231,8 +231,8 @@ public:
         }
         else
         {
-            TreeNode *temp = root;
-            TreeNode *store = NULL;
+            trees *temp = root;
+            trees *store = NULL;
             while (temp->getLeft() != NULL || temp->getRight() != NULL)
             {
                 store = temp;
@@ -250,7 +250,7 @@ public:
             return store->getData();
         }
     }
-    int helperGetLevel(TreeNode *root, int data, int level)
+    int helperGetLevel(trees *root, int data, int level)
     {
         if (root == NULL)
         {
@@ -272,7 +272,7 @@ public:
 
         return lowerLevel;
     }
-    int getLevel(TreeNode *root, int data)
+    int getLevel(trees *root, int data)
     {
         return helperGetLevel(root, data, 1);
     }
@@ -286,7 +286,7 @@ public:
         }
         return flag;
     }
-    void display(TreeNode *root, int space)
+    void display(trees *root, int space)
     {
         if (root == NULL)
         {
@@ -306,32 +306,50 @@ public:
             display(root->getLeft(), space);
         }
     }
+    int numberOfNodes(trees *root)
+    {
+        static int count = 0;
+        if (root == NULL)
+        {
+            return 0;
+        }
+        else
+        {
+            count++;
+            numberOfNodes(root->getLeft());
+            numberOfNodes(root->getRight());
+        }
+        return count;
+    }
 };
 
 void displayOfMenu()
 {
     cout.flush();
-    cout << "1. Insert a node in the Binary Search Tree" << endl;
-    cout << "2. Inorder Traversal" << endl;
-    cout << "3. Preorder Traversal" << endl;
-    cout << "4. Postorder Traversal" << endl;
-    cout << "5. Levelorder Traversal" << endl;
-    cout << "6. Check height of the tree" << endl;
-    cout << "7. Check level of a node" << endl;
-    cout << "8. Get Parent of a node" << endl;
-    cout << "0. Exit" << endl;
+    cout << "\n1. Insert a node in the Binary Search Tree" << endl;
+    cout << "\n2. Inorder Traversal" << endl;
+    cout << "\n3. Preorder Traversal" << endl;
+    cout << "\n4. Postorder Traversal" << endl;
+    cout << "\n5. Levelorder Traversal" << endl;
+    cout << "\n6. Check height of the tree" << endl;
+    cout << "\n7. Check level of a node" << endl;
+    cout << "\n8. Get Parent of a node" << endl;
+    cout << "\n9. Number of nodes." << endl;
+    cout << "\n0. Exit" << endl;
     cout << "Enter your choice: ";
 }
 void menu()
 {
     BinarySearchTree obj;
-    displayOfMenu();
-    int choice = 0;
-    cin >> choice;
+
+    int choice;
     cout.flush();
     system("cls");
     do
     {
+        displayOfMenu();
+        cin >> choice;
+
         switch (choice)
         {
         case 1:
@@ -386,11 +404,22 @@ void menu()
             break;
 
         case 7:
-            int d;
-            cout << "Enter the data of node to check its level: ";
-            cin >> d;
-            cout << endl
-                 << "Level of node with data " << d << " is: " << obj.getLevel(obj.getRoot(), d) << endl;
+            int node1, node2;
+            cout << "Enter the data of node1: ";
+            cin >> node1;
+
+            cout << "Enter the data of node2: ";
+            cin >> node2;
+
+            if (obj.isSameLevel(node1, node2))
+            {
+                cout << "Both nodes are at same level." << endl;
+            }
+            else
+            {
+                cout << "Both are not at same level." << endl;
+            }
+
             cout.flush();
             system("pause");
             system("cls");
@@ -401,6 +430,12 @@ void menu()
             cout << "Enter data of a node to check its parent: ";
             cin >> da;
             cout << "Parent of " << da << " is: " << obj.returnParent(da, obj.getRoot());
+            cout.flush();
+            system("pause");
+            system("cls");
+            break;
+        case 9:
+            cout << "Number of nodes: " << obj.numberOfNodes(obj.getRoot()) << endl;
             cout.flush();
             system("pause");
             system("cls");
