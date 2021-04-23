@@ -323,87 +323,83 @@ public:
     }
 };
 
-void displayOfMenu()
+void displayOfMenuTraversals()
 {
-    cout.flush();
+    cout << "\n\tTravesals: " << endl;
     cout << "\n1. Insert a node in the Binary Search Tree" << endl;
     cout << "\n2. Inorder Traversal" << endl;
     cout << "\n3. Preorder Traversal" << endl;
     cout << "\n4. Postorder Traversal" << endl;
     cout << "\n5. Levelorder Traversal" << endl;
-    cout << "\n6. Check height of the tree" << endl;
-    cout << "\n7. Check level of a node" << endl;
-    cout << "\n8. Get Parent of a node" << endl;
-    cout << "\n9. Number of nodes." << endl;
-    cout << "\n0. Exit" << endl;
+    cout << "Enter your choice: ";
+}
+void displayOfMenuFunctions()
+{
+
+    cout << "\n\tFunctions" << endl;
+    cout << "\n1. Check height of the tree" << endl;
+    cout << "\n2. Check level of a node" << endl;
+    cout << "\n3. Get Parent of a node" << endl;
+    cout << "\n4. Number of nodes." << endl;
     cout << "Enter your choice: ";
 }
 void menu()
 {
     BinarySearchTree obj;
-
     int choice;
-    cout.flush();
-    system("cls");
+    char opt;
     do
     {
-        displayOfMenu();
+        int data;
+        cout << "Enter data to insert: ";
+        cin >> data;
+        obj.insertNode(data);
+        cout << "Do you want to continue entering data.(y/n): ";
+        cin >> opt;
+    } while (opt == 'y');
+
+    do
+    {
+        displayOfMenuTraversals();
         cin >> choice;
 
         switch (choice)
         {
         case 1:
-            int data;
-            cout << "Enter data to insert: ";
-            cin >> data;
-            obj.insertNode(data);
-            cout.flush();
-            system("pause");
-            system("cls");
             break;
 
         case 2:
             cout << "Inorder Traversal: ";
             obj.inOrder(obj.getRoot());
             cout << endl;
-            cout.flush();
-            system("pause");
-            system("cls");
             break;
 
         case 3:
             cout << "Preorder Traversal: ";
             obj.preOrder(obj.getRoot());
             cout << endl;
-            cout.flush();
-            system("pause");
-            system("cls");
             break;
 
         case 4:
             cout << "Postorder Traversal: ";
             obj.postOrder(obj.getRoot());
             cout << endl;
-            cout.flush();
-            system("pause");
-            system("cls");
             break;
         case 5:
             cout << "Levelorder Traversal: ";
             obj.levelOrderTraversal();
-            cout.flush();
-            system("pause");
-            system("cls");
             break;
+        }
+        displayOfMenuFunctions();
+        cin >> choice;
+        switch (choice)
+        {
 
-        case 6:
+        case 1:
             cout << "Height of the tree is: " << obj.helperHeight(obj.getRoot()) << endl;
-            cout.flush();
-            system("pause");
-            system("cls");
             break;
 
-        case 7:
+        case 2:
             int node1, node2;
             cout << "Enter the data of node1: ";
             cin >> node1;
@@ -420,28 +416,21 @@ void menu()
                 cout << "Both are not at same level." << endl;
             }
 
-            cout.flush();
-            system("pause");
-            system("cls");
             break;
 
-        case 8:
+        case 3:
             int da;
             cout << "Enter data of a node to check its parent: ";
             cin >> da;
             cout << "Parent of " << da << " is: " << obj.returnParent(da, obj.getRoot());
-            cout.flush();
-            system("pause");
-            system("cls");
             break;
-        case 9:
+        case 4:
             cout << "Number of nodes: " << obj.numberOfNodes(obj.getRoot()) << endl;
-            cout.flush();
-            system("pause");
-            system("cls");
             break;
         }
-    } while (choice != 0);
+        cout << "Do you want to continue(y/n): ";
+        cin >> opt;
+    } while (opt == 'y');
 }
 
 int main()
