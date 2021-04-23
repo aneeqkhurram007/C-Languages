@@ -345,9 +345,11 @@ void displayOfMenuFunctions()
 }
 void menu()
 {
+    cout << "\nAssignment  2\nName: Aneeq Khurram \tRegId: FA19-BCS-145" << endl;
     BinarySearchTree obj;
     int choice;
     char opt;
+    cout << "\nEnter data in binary search tree." << endl;
     do
     {
         int data;
