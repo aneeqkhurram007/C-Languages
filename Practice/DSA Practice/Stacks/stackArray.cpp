@@ -50,13 +50,13 @@ public:
     }
 };
 
-int main()
-{
-    stackArray stack;
-    stack.psuh(5);
-    stack.psuh(4);
-    stack.psuh(3);
-    stack.display();
-    stack.pop();
-    stack.display();
-}
+// int main()
+// {
+//     stackArray stack;
+//     stack.psuh(5);
+//     stack.psuh(4);
+//     stack.psuh(3);
+//     stack.display();
+//     stack.pop();
+//     stack.display();
+// }

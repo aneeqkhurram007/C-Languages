@@ -35,7 +35,11 @@ public:
     }
     void pop()
     {
-        head = head->next;
+        List *temp = head;
+        temp = temp->next;
+        delete[] head;
+        head = NULL;
+        head = temp;
     }
     void display()
     {
