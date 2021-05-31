@@ -8,57 +8,52 @@ public:
     trees *leftChild;
     trees *rightChild;
 };
-class BST
+
+void inOrder(trees *root)
+{
+    if (!root)
+    {
+
+        return;
+    }
+
+    inOrder(root->leftChild);
+    cout << root->data << " ";
+    inOrder(root->rightChild);
+}
+
+trees *createNode(trees *root, int data)
 {
 
-public:
-    trees *root = NULL;
-    bool isEmpty()
+    if (!root)
     {
-        return root == NULL;
+        cout << " 0";
+        root = new trees;
+        root->data = data;
+        root->leftChild = NULL;
+        root->rightChild = NULL;
     }
-    void inOrder(trees *p)
+    if (data > root->data)
     {
-        inOrder(p->leftChild);
-        cout << p->data << " ";
-        inOrder(p->rightChild);
+        root->rightChild = createNode(root->rightChild, data);
     }
+    else
+    {
+        root->leftChild = createNode(root->leftChild, data);
+    }
+    return root;
+}
 
-    void createNode(int data)
-    {
-        if (isEmpty())
-        {
-            root = new trees;
-            root->data = data;
-            root->leftChild = NULL;
-            root->rightChild = NULL;
-        }
-        else
-        {
-            trees *p = new trees;
-            p->data = data;
-            trees *ptr = root;
-            if (data > ptr->data && ptr->rightChild == NULL)
-            {
-                ptr->rightChild = p;
-            }
-            else if (data < ptr->data && ptr->leftChild == NULL)
-            {
-                ptr->leftChild = p;
-            }
-            root = p;
-        }
-        inOrder(root);
-    }
-};
 int main()
 {
-    BST tree;
-    tree.createNode(6);
-    tree.createNode(4);
-    tree.createNode(7);
-    tree.createNode(5);
-    tree.createNode(3);
+
+    trees *root = NULL;
+    root = createNode(root, 6);
+    root = createNode(root, 4);
+    // createNode(root, 7);
+    // createNode(root, 5);
+    // createNode(root, 3);
+    inOrder(root);
 
     return 0;
 }
