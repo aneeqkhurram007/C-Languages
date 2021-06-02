@@ -138,29 +138,29 @@ void parentNode(bst2 *root, int data, int parent)
         parentNode(root->right, data, root->data);
     }
 }
-int levelOfNode(bst2 *root, int node)
-{
-    int level = 0;
-    do
-    {
-        level++;
-        if (root->data == node)
-        {
-            cout << "Level of Node: " << level;
-            break;
-        }
-        else if (node > root->data)
-        {
-            root = root->right;
-        }
-        else if (node < root->data)
-        {
-            root = root->left;
-        }
+// int levelOfNode(bst2 *root, int node)
+// {
+//     int level = 0;
+//     do
+//     {
+//         level++;
+//         if (root->data == node)
+//         {
+//             cout << "Level of Node: " << level;
+//             break;
+//         }
+//         else if (node > root->data)
+//         {
+//             root = root->right;
+//         }
+//         else if (node < root->data)
+//         {
+//             root = root->left;
+//         }
 
-    } while (root != NULL);
-    return level;
-}
+//     } while (root != NULL);
+//     return level;
+// }
 int main()
 {
     bst2 *root = NULL;
