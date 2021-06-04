@@ -138,6 +138,33 @@ void parentNode(bst2 *root, int data, int parent)
         parentNode(root->right, data, root->data);
     }
 }
+void parent(bst2 *root, int data)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    bst2 *tempParent;
+    bst2 *temp = root;
+    while (temp != NULL)
+    {
+        tempParent = temp;
+        if (data < temp->data)
+        {
+            temp = temp->left;
+        }
+        else if (data > temp->data)
+        {
+            temp = temp->right;
+        }
+        if (temp->data == data)
+        {
+            cout << "\nParent 2: " << tempParent->data;
+            break;
+        }
+    }
+}
+
 int levelOfNode(bst2 *root, int node)
 {
     int level = 0;
@@ -184,6 +211,7 @@ int main()
     printLevelQueues(root);
     cout << "\nParent: ";
     parentNode(root, 80, -1);
+    parent(root, 80);
     levelOfNode(root, 75);
 
     return 0;
