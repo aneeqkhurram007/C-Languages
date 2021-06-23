@@ -138,6 +138,22 @@ void parentNode(bst2 *root, int data, int parent)
         parentNode(root->right, data, root->data);
     }
 }
+void search(bst2 *root, int data)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    if (root->data == data)
+    {
+        cout << "Node Found" << root->data;
+    }
+    else
+    {
+        search(root->left, data);
+        search(root->right, data);
+    }
+}
 void parent(bst2 *root, int data)
 {
     if (root == NULL)
